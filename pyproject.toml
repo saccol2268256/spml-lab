@@ -5,7 +5,11 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "cvxpy",
+    "matplotlib",
     "networkx>=3.5",
+    "numpy",
+    "pandas",
     "torch>=2.9.1",
     "torch-geometric>=2.7.0",
 ]

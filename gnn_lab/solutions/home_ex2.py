@@ -3,7 +3,7 @@ import torch.nn as nn
 from torch import Tensor
 from typing import Callable, Optional
 
-
+#LEARN ALSO S shift operator
 class AttentionalGCNLayer(nn.Module):
     """
     Single graph convolutional layer with attention over edges.
@@ -137,7 +137,7 @@ class AttentionalGCNModel(nn.Module):
         self.conv1 = AttentionalGCNLayer(
             in_features=in_channels,
             out_features=hidden_channels,
-            activation=torch.relu,
+            activation=torch.relu,#WHY IN THIS WAY THE ACTIVATION?
         )
         self.conv2 = AttentionalGCNLayer(
             in_features=hidden_channels,

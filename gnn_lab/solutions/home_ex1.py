@@ -90,9 +90,14 @@ class GCN(torch.nn.Module):
         for conv, pool in zip(self.convs, self.pools):
             x = conv(x, edge_index).relu()
             x, edge_index, _, batch, _, _ = pool(x, edge_index, batch=batch)
-
+        #In PyTorch Geometric, hierarchical pooling layers like TopKPooling or SAGPooling return a tuple of exactly 6 elements.
         # Graph-level pooling
         x = global_add_pool(x, batch)
 
         # Final MLP classifier
         return self.mlp(x)
+
+
+# PREPARETRAIN AND TEST 
+# 
+# MERGE IN EPOCH TOGETER AFTER DECLARATION
